@@ -35,7 +35,7 @@ switch (true){
         break;   
 }
 
-let entryLang = 'en';
+let entryLang = prompt("Введите язык", "ru, en" );
     lang = {
     'ru' : ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],  
     'en' : ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
