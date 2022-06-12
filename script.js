@@ -16,25 +16,31 @@
 // }
 // console.log(array);
 
+// let full = getFullPrice(2, 3)
 
-// let lang = ['ru', 'en'];
-let lang = prompt("Введите язык", "ru, en" );
+lang = prompt("Введите язык", "ru, en" );
 
 if (lang == "ru") {
-    console.log("Дни недели на русском языке");
+    console.log("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье");
 } else {
-    console.log("Дни недели на английском языке");
+    console.log("Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday");
 }
 
 switch (true){
     case lang == "ru":
-        console.log("Дни недели на русском языке");
+        console.log("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье");
         break;
     case lang == "en":
-        console.log("Дни недели на английском  языке");
+        console.log("Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday");
         break;   
 }
 
+let entryLang = 'en';
+    lang = {
+    'ru' : ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"],  
+    'en' : ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+};
+console.log(lang[entryLang].join());
 
 //task 2
 let namePerson = prompt("Введите имя", "Артем, Александр или другое имя" );
