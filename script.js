@@ -1,19 +1,28 @@
-class First {
-    hello() {
-        console.log("Привет я метод родителя!");
-    }
-}
+// fetch('./db.json')
+// .then(response =>response.json())
+// .then(data => {
+//     console.log(data);
+// });
 
-class Second extends First {
-    constructor() {
-        super();
-    }
+const getData = () => {
+    fetch('./db.json');
+};
 
-    hello() {
-        super.hello();
-        console.log("А я наследуемый метод!");
-    }
-}
+const sendData = (url, data) => {
+    return fetch(url, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(response => response.json());
+};
 
-const second = new Second();
-second.hello();
+sendData('https://jsonplaceholder.typicode.com/posts', JSON.stringify(getData))
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log(error)
+    });
