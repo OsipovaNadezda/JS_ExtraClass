@@ -1,12 +1,4 @@
-// fetch('./db.json')
-// .then(response =>response.json())
-// .then(data => {
-//     console.log(data);
-// });
-
-const getData = () => {
-    fetch('./db.json');
-};
+const getData = () => fetch('./db.json');
 
 const sendData = (url, data) => {
     return fetch(url, {
@@ -15,8 +7,7 @@ const sendData = (url, data) => {
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
-        })
-        .then(response => response.json());
+        }).then(response => response.json());
 };
 
 sendData('https://jsonplaceholder.typicode.com/posts', JSON.stringify(getData))
@@ -24,5 +15,5 @@ sendData('https://jsonplaceholder.typicode.com/posts', JSON.stringify(getData))
         console.log(data);
     })
     .catch(error => {
-        console.log(error)
+        console.log(error);
     });
